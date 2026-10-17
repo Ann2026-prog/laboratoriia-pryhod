@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="uk">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#101a2d">
+  <meta name="description" content="Космічний навчальний RPG-квест для 9 класу: 10 практичних місій про закони Ньютона, підказки та миттєва перевірка.">
+  <title>Закони Ньютона · Академія Орбіта</title>
+  <link rel="icon" type="image/svg+xml" href="icon.svg">
+  <link rel="stylesheet" href="style.css">
+  <script src="quest.js" defer></script>
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">До завдання</a>
+  <header class="topbar">
+    <a class="brand" href="./" aria-label="Академія Орбіта — головна"><span class="brand-mark" aria-hidden="true">O<span>✦</span></span><span>АКАДЕМІЯ <b>ОРБІТА</b></span></a>
+    <span class="course-tag">ФІЗИКА <span>·</span> 9 КЛАС</span>
+    <div class="header-actions"><button class="quiet-button" data-action="theory">Пам’ятка</button><button class="icon-button" data-action="reset" aria-label="Почати квест заново" title="Почати заново">↺</button></div>
+  </header>
+  <main id="main" tabindex="-1"></main>
+  <footer><span>Досліджуй. Помиляйся. Знаходь відповіді.</span><span id="storage-note">Прогрес зберігається у цьому браузері.</span></footer>
+  <dialog id="theory-dialog" aria-labelledby="theory-title">
+    <div class="dialog-top"><span class="eyebrow">БОРТОВА ПАМ’ЯТКА</span><button class="icon-button" data-action="close-theory" aria-label="Закрити пам’ятку">×</button></div>
+    <h2 id="theory-title">Три закони. Один Всесвіт.</h2>
+    <p class="muted">Закони розглядаємо в інерціальній системі відліку. У числових завданнях використовуємо модулі величин; напрямки сил враховуємо окремо.</p>
+    <div class="law-card"><b><span>I</span> Закон інерції</b><p>Якщо рівнодійна всіх сил дорівнює нулю, тіло зберігає стан спокою або прямолінійний рівномірний рух.</p><div class="formula">F = 0 → a = 0 → v = const</div></div>
+    <div class="law-card"><b><span>II</span> Закон руху</b><p>Прискорення прямо пропорційне рівнодійній сил та обернено пропорційне масі. Прискорення напрямлене вздовж рівнодійної.</p><div class="formula">F = ma <small>·</small> a = F : m <small>·</small> m = F : a</div><p class="muted small">F — рівнодійна сил (Н), m — маса (кг), a — прискорення (м/с²). Для останньої формули a ≠ 0.</p></div>
+    <div class="law-card"><b><span>III</span> Закон взаємодії</b><p>Два тіла діють одне на одне із силами, однаковими за модулем і протилежними за напрямком. Сили прикладені до різних тіл.</p><div class="formula">|F₁| = |F₂| <small>·</small> напрямки протилежні</div></div>
+    <p class="tip-line">Для двох протилежно напрямлених сил на одному тілі: F = F<sub>більша</sub> − F<sub>менша</sub>.</p>
+    <button class="primary-button wide" data-action="close-theory">Повернутися до місії</button>
+  </dialog>
+  <dialog id="reset-dialog" aria-labelledby="reset-title"><span class="eyebrow">НОВА ЕКСПЕДИЦІЯ</span><h2 id="reset-title">Почати спочатку?</h2><p class="muted">Поточні відповіді й досвід буде скинуто. Можна пройти всі 10 місій ще раз.</p><div class="button-row"><button class="quiet-button" data-action="cancel-reset">Продовжити квест</button><button class="primary-button" data-action="confirm-reset">Почати заново</button></div></dialog>
+  <div class="sr-only" id="announcement" role="status" aria-live="polite"></div>
+<a href="../../" style="position:fixed;bottom:12px;right:12px;z-index:9999;background:#fff;color:#21453f;padding:11px 16px;border:1px solid #aaa;border-radius:30px;font:600 14px system-ui;text-decoration:none;box-shadow:0 3px 15px #0002">← До каталогу</a></body>
+</html>

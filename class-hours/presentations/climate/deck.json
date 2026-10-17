@@ -1,0 +1,22 @@
+{
+  "id": "climate",
+  "title": "Секретна справа: загадка зміни клімату",
+  "icon": "🌍",
+  "description": "Екологія та відповідальне ставлення до довкілля.",
+  "count": 13,
+  "slides": [
+    "slide-01.webp",
+    "slide-02.webp",
+    "slide-03.webp",
+    "slide-04.webp",
+    "slide-05.webp",
+    "slide-06.webp",
+    "slide-07.webp",
+    "slide-08.webp",
+    "slide-09.webp",
+    "slide-10.webp",
+    "slide-11.webp",
+    "slide-12.webp",
+    "slide-13.webp"
+  ]
+}

@@ -1,0 +1,19 @@
+{
+  "id": "hands",
+  "title": "Місія «Чисті руки»",
+  "icon": "🧼",
+  "description": "Гігієна рук у форматі навчальної пригоди.",
+  "count": 10,
+  "slides": [
+    "slide-01.webp",
+    "slide-02.webp",
+    "slide-03.webp",
+    "slide-04.webp",
+    "slide-05.webp",
+    "slide-06.webp",
+    "slide-07.webp",
+    "slide-08.webp",
+    "slide-09.webp",
+    "slide-10.webp"
+  ]
+}

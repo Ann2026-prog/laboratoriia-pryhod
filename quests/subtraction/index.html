@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="uk">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#112940">
+  <meta name="description" content="Вісім практичних завдань з віднімання натуральних чисел для учнів 5 класу.">
+  <title>Квест віднімання · 5 клас</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%23112940'/%3E%3Cpath d='M14 32h36' stroke='%23f8cf73' stroke-width='8' stroke-linecap='round'/%3E%3C/svg%3E">
+  <style>
+    :root{font-family:system-ui,-apple-system,"Segoe UI",sans-serif;color:#183049;background:#e9f2f5;font-size:16px}
+    *{box-sizing:border-box} body{margin:0;min-height:100vh;background:radial-gradient(circle at 95% 3%,#b8e7ee 0,transparent 29rem),linear-gradient(135deg,#f0f8fa,#dcebf0)} button,input{font:inherit} button{cursor:pointer} button:focus-visible,input:focus-visible{outline:3px solid #137b99;outline-offset:3px}
+    .topbar{background:#112940;color:#fff;padding:1rem max(1.25rem,calc((100vw - 1150px)/2));display:flex;align-items:center;justify-content:space-between;gap:1rem;box-shadow:0 4px 16px #102c4250}
+    .brand{display:flex;align-items:center;gap:.8rem;min-width:0}.crest{width:2.8rem;height:2.8rem;flex:none;border:2px solid #f8cf73;border-radius:.8rem;display:grid;place-items:center;color:#f8cf73;font-size:2rem;line-height:1;font-weight:700;box-shadow:inset 0 0 0 3px #112940,0 0 0 1px #f8cf7375}
+    h1,h2,h3,p{margin-top:0}.brand h1{font-family:Georgia,serif;font-size:1.42rem;line-height:1.15;margin:0}.brand small{display:block;color:#bdd3e1;font-size:.8rem;margin-top:.2rem}.xp{background:#23465f;border:1px solid #58758a;border-radius:999px;padding:.6rem .9rem;white-space:nowrap;font-weight:750;color:#ffe1a0}.xp span{color:#fff;font-variant-numeric:tabular-nums}
+    main{max-width:1150px;margin:auto;padding:1.5rem 1.25rem 3rem}.layout{display:grid;grid-template-columns:260px minmax(0,1fr);gap:1.25rem;align-items:start}
+    .map,.quest{background:#fff;border:1px solid #bdd0db;box-shadow:0 10px 26px #23465f17;border-radius:1.25rem}.map{padding:1.2rem;position:sticky;top:1rem}.map h2{font:700 1.2rem Georgia,serif;margin-bottom:.35rem}.map p{font-size:.9rem;color:#526c7b;margin-bottom:1rem}.progress{height:.65rem;background:#d9e8ed;border-radius:99px;overflow:hidden;margin-bottom:1.1rem}.progress-fill{width:0;height:100%;background:linear-gradient(90deg,#10a4a2,#e9b547);transition:width .3s}.steps{list-style:none;margin:0;padding:0;display:grid;gap:.45rem}.steps li{display:flex;align-items:center;gap:.65rem;padding:.62rem .7rem;border-radius:.75rem;background:#f2f7f8;color:#496273;font-size:.88rem;line-height:1.25}.steps li.current{background:#d7f3f1;color:#103d4b;font-weight:750;box-shadow:inset 0 0 0 2px #20a6a3}.steps li.done{color:#246a54;background:#e8f7ef}.step-number{width:1.65rem;height:1.65rem;border-radius:.5rem;display:grid;place-items:center;flex:none;background:#d8e5ea;font-weight:800;color:#3c5968}.current .step-number{background:#119c9d;color:#fff}.done .step-number{background:#2aa271;color:#fff}
+    .quest{overflow:hidden}.quest-head{background:#18384f;color:#fff;padding:1.15rem 1.5rem;display:flex;align-items:flex-start;justify-content:space-between;gap:1rem}.eyebrow{text-transform:uppercase;letter-spacing:.12em;font-size:.78rem;font-weight:800;color:#f8cf73;margin-bottom:.35rem}.quest-head h2{font:700 clamp(1.6rem,3vw,2.25rem)/1.15 Georgia,serif;margin:0}.reward{background:#f8cf73;color:#3b2d10;font-weight:800;border-radius:.6rem;padding:.5rem .65rem;white-space:nowrap}.quest-body{padding:1.5rem}.story{color:#4d6372;line-height:1.55;margin-bottom:1.2rem}.problem{background:#f2f8fa;border-left:5px solid #15a6a5;border-radius:.65rem;padding:1.1rem 1.15rem;font-size:clamp(1.1rem,2vw,1.3rem);font-weight:700;line-height:1.5;margin-bottom:1.3rem}.input-group{display:flex;align-items:center;flex-wrap:wrap;gap:.65rem;margin-bottom:1rem}.input-group label{font-weight:700;min-width:12rem}.answer{width:min(100%,14rem);padding:.78rem .9rem;border:2px solid #9db7c3;border-radius:.7rem;background:#fff;color:#163348;font-size:1.15rem;font-weight:700;font-variant-numeric:tabular-nums}.answer:disabled{background:#e9f5ee;color:#246a54;border-color:#59b488}.unit{color:#45606c;font-weight:600}.actions{display:flex;gap:.7rem;flex-wrap:wrap;margin:1.3rem 0}.primary,.secondary{border-radius:.7rem;padding:.78rem 1rem;font-weight:800;min-height:2.9rem}.primary{background:#0d8289;color:white;border:2px solid #0d8289;box-shadow:0 4px 0 #075d67}.primary:hover{background:#086c74}.secondary{background:#fff;color:#1d526b;border:2px solid #aac8d3}.secondary:hover{background:#e9f6f7}.primary:disabled{opacity:.55;cursor:default;box-shadow:none}
+    .hint,.feedback{border-radius:.75rem;padding:.85rem 1rem;line-height:1.5;margin-top:.75rem}.hint{background:#fff4d7;border:1px solid #e9c46c;color:#58431d}.feedback{background:#fff1ed;border:1px solid #e9aa99;color:#7c332c}.feedback.success{background:#e7f7ed;border-color:#82cda1;color:#18563b}.feedback:empty,.hint[hidden],.feedback[hidden]{display:none}.rule{border-top:1px solid #d8e5e8;margin-top:1.4rem;padding-top:1rem;color:#405c69;line-height:1.5}.rule strong{color:#173a50}.finish{background:#f2f9ee;border:2px solid #a7d495;border-radius:.8rem;padding:1rem;margin-top:1.2rem}.finish h3{font:700 1.4rem Georgia,serif;margin-bottom:.4rem;color:#245a3d}.finish p{margin-bottom:.9rem}.small{font-size:.87rem;color:#58707c}.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+    @media(max-width:760px){.topbar{padding:.85rem 1rem}.brand h1{font-size:1.1rem}.crest{width:2.3rem;height:2.3rem;font-size:1.7rem}.xp{font-size:.85rem;padding:.5rem .65rem}main{padding:1rem .75rem 2rem}.layout{display:flex;flex-direction:column;gap:.85rem}.map{position:static;width:100%;padding:.9rem}.map h2,.map p{display:none}.progress{margin:0 0 .65rem}.steps{display:flex;overflow-x:auto;gap:.3rem;padding-bottom:.1rem}.steps li{padding:.35rem;background:transparent;min-width:2.2rem}.steps li .step-label{display:none}.steps li.current{box-shadow:none;background:#d7f3f1}.step-number{width:1.8rem;height:1.8rem}.quest{width:100%}.quest-head{padding:1rem}.quest-body{padding:1rem}.problem{padding:.9rem}.input-group{align-items:flex-start;flex-direction:column}.answer{width:100%}.actions button{flex:1 1 10rem}}
+    @media(prefers-reduced-motion:reduce){.progress-fill{transition:none}}
+  </style>
+</head>
+<body>
+  <header class="topbar"><div class="brand"><div class="crest" aria-hidden="true">−</div><div><h1>Квест віднімання</h1><small>Математика · 5 клас</small></div></div><div class="xp" aria-live="polite">✦ <span id="xp">0</span> / 80 XP</div></header>
+  <main><div class="layout">
+    <aside class="map" aria-label="Шлях квесту"><h2>Шлях дослідника</h2><p id="progress-label">Виконано 0 із 8 завдань</p><div class="progress" role="progressbar" aria-label="Виконання квесту" aria-valuemin="0" aria-valuemax="8" aria-valuenow="0" id="progress"><div class="progress-fill" id="progress-fill"></div></div><ol class="steps" id="steps"></ol></aside>
+    <section class="quest" aria-labelledby="quest-title"><div class="quest-head"><div><div class="eyebrow" id="quest-count">Завдання 1 із 8</div><h2 id="quest-title"></h2></div><div class="reward">+10 XP</div></div><div class="quest-body"><p class="story" id="story"></p><div class="problem" id="problem"></div><form id="answer-form" novalidate><div id="fields"></div><div class="actions"><button class="primary" id="check" type="submit">Перевірити відповідь</button><button class="secondary" id="hint-button" type="button" aria-expanded="false">Підказка</button></div></form><div class="hint" id="hint" hidden></div><div class="feedback" id="feedback" role="status" aria-live="polite" hidden></div><div class="rule"><strong>Математичний ключ:</strong> <span id="rule"></span></div><div id="finish"></div></div></section>
+  </div></main>
+  <script>
+    "use strict";
+    const tasks = [
+      {title:"Жетони дослідника",story:"У шкільному квесті команда збирає жетони для нових відкриттів.",problem:"Команда мала 684 жетони й обміняла 239 на спорядження. Скільки жетонів залишилося?",labels:["Залишилося"],units:["жетонів"],answers:[445],hint:"Відніми спочатку 200, а потім 39: 684 − 200 − 39.",rule:"Щоб відняти число, його можна розкласти на зручні доданки.",solution:"684 − 239 = 445."},
+      {title:"Покупка для походу",story:"Перед походом потрібно розрахувати витрати.",problem:"На покупку було 900 грн. Ліхтарик коштує 475 грн. Скільки грошей залишиться?",labels:["Залишиться"],units:["грн"],answers:[425],hint:"475 = 400 + 75. Відніми 400, потім 75.",rule:"900 − (400 + 75) = (900 − 400) − 75.",solution:"900 − 475 = 425 грн."},
+      {title:"Майстерня наліпок",story:"У майстерні готують нагороди для двох класів.",problem:"Було 760 наліпок. Одному класу видали 120, другому — 80. Скільки наліпок залишилося?",labels:["Залишилося"],units:["наліпок"],answers:[560],hint:"Спочатку знайди, скільки видали разом: 120 + 80.",rule:"a − b − c = a − (b + c), якщо всі віднімання можливі.",solution:"760 − (120 + 80) = 560."},
+      {title:"Скарбниця команди",story:"Команда обирає потрібні речі в межах свого бюджету.",problem:"У скарбниці було 840 грн. На карту витратили 240 грн, на компас — 150 грн. Скільки грошей залишилося?",labels:["Залишилося"],units:["грн"],answers:[450],hint:"Додай витрати: 240 + 150 = 390. Потім відніми суму від 840.",rule:"Щоб відняти суму, можна відняти кожен доданок послідовно.",solution:"840 − (240 + 150) = 450 грн."},
+      {title:"Квитки до музею",story:"Музей підраховує продані квитки.",problem:"Було 720 квитків. Після продажу залишилося 485. Скільки квитків продали?",labels:["Продали"],units:["квитків"],answers:[235],hint:"Кількість проданих квитків — це різниця між початковою кількістю і залишком.",rule:"Якщо a − x = b, то x = a − b.",solution:"720 − 485 = 235 квитків."},
+      {title:"Загін помічників",story:"Два загони підготували матеріали для спільної справи.",problem:"Перший загін зібрав 350 карток, другий — 280. Для гри використали 180 карток. Скільки карток залишилося?",labels:["Залишилося"],units:["карток"],answers:[450],hint:"Можна обчислити зручно: 350 + (280 − 180).",rule:"Із суми можна відняти число від одного доданка, якщо цей доданок не менший за від'ємник.",solution:"350 + (280 − 180) = 450 карток."},
+      {title:"Нульова зупинка",story:"Перевір дві важливі властивості віднімання.",problem:"У сховищі є 635 МБ вільного місця. Скільки залишиться, якщо зайняти 0 МБ? А якщо зайняти всі 635 МБ?",labels:["Після 0 МБ" ,"Після 635 МБ"],units:["МБ","МБ"],answers:[635,0],hint:"Віднімання нуля не змінює число. Число мінус саме це число дорівнює нулю.",rule:"a − 0 = a; a − a = 0.",solution:"635 − 0 = 635 МБ; 635 − 635 = 0 МБ."},
+      {title:"Фінальний скарб",story:"Останнє завдання — спланувати залишок коштів для класного куточка.",problem:"Було 1200 грн. На матеріали витратили 385 грн, а на фарби — 275 грн. Скільки грошей залишилося?",labels:["Залишилося"],units:["грн"],answers:[540],hint:"Знайди загальну вартість покупок: 385 + 275. Відніми її від 1200.",rule:"a − (b + c) = (a − b) − c, якщо всі віднімання можливі.",solution:"1200 − (385 + 275) = 540 грн."}
+    ];
+    let current = 0;
+    const solved = Array(tasks.length).fill(false);
+    const $ = id => document.getElementById(id);
+    function updateMap(){
+      const count=solved.filter(Boolean).length;
+      $("xp").textContent=String(count*10);
+      $("progress-label").textContent=`Виконано ${count} із 8 завдань`;
+      $("progress").setAttribute("aria-valuenow",String(count));
+      $("progress-fill").style.width=`${count/8*100}%`;
+      $("steps").innerHTML=tasks.map((t,i)=>`<li class="${solved[i]?"done":i===current?"current":""}" ${i===current?'aria-current="step"':""}><span class="step-number">${solved[i]?"✓":i+1}</span><span class="step-label">${t.title}</span></li>`).join("");
+    }
+    function render(){
+      const t=tasks[current];
+      $("quest-count").textContent=`Завдання ${current+1} із 8`;
+      $("quest-title").textContent=t.title; $("story").textContent=t.story;
+      $("problem").textContent=t.problem; $("rule").textContent=t.rule;
+      $("fields").replaceChildren();
+      t.labels.forEach((label,i)=>{
+        const row=document.createElement("div");row.className="input-group";
+        const lab=document.createElement("label");lab.htmlFor=`answer-${i}`;lab.textContent=label;
+        const input=document.createElement("input");input.className="answer";input.id=`answer-${i}`;input.type="text";input.inputMode="numeric";input.autocomplete="off";input.setAttribute("aria-describedby","feedback");input.setAttribute("aria-label",`${label}, ${t.units[i]}`);input.maxLength=8;
+        const unit=document.createElement("span");unit.className="unit";unit.textContent=t.units[i];
+        row.append(lab,input,unit);$("fields").append(row);
+      });
+      $("hint").textContent=t.hint;$("hint").hidden=true;
+      $("hint-button").setAttribute("aria-expanded","false");
+      $("feedback").hidden=true;$("feedback").textContent="";$("feedback").className="feedback";
+      $("check").disabled=false;$("finish").replaceChildren();updateMap();
+      $("answer-0").focus();
+    }
+    $("hint-button").addEventListener("click",()=>{
+      const show=$("hint").hidden;$("hint").hidden=!show;$("hint-button").setAttribute("aria-expanded",String(show));
+      $("hint-button").textContent=show?"Сховати підказку":"Підказка";
+    });
+    $("answer-form").addEventListener("submit",event=>{
+      event.preventDefault();if(solved[current])return;
+      const t=tasks[current];const values=t.answers.map((_,i)=>$("answer-"+i).value.trim().replace(/\s/g,""));
+      const fb=$("feedback");fb.hidden=false;fb.className="feedback";
+      if(values.some(v=>!/^\d+$/.test(v))){fb.textContent="Впиши натуральне число або 0 у кожне поле.";return;}
+      if(values.some((v,i)=>Number(v)!==t.answers[i])){fb.textContent="Поки що не збігається. Спробуй ще раз або відкрий підказку.";return;}
+      solved[current]=true;fb.classList.add("success");fb.textContent=`Правильно! ${t.solution} +10 XP`;
+      t.answers.forEach((_,i)=>$("answer-"+i).disabled=true);$("check").disabled=true;updateMap();
+      const box=document.createElement("div");box.className="finish";
+      if(current===tasks.length-1){
+        box.innerHTML="<h3>Квест завершено! ✦</h3><p>Ти виконав усі 8 завдань і здобув 80 XP.</p>";
+        const again=document.createElement("button");again.className="secondary";again.textContent="Пройти квест ще раз";again.addEventListener("click",()=>{solved.fill(false);current=0;render();});box.append(again);
+      }else{
+        const next=document.createElement("button");next.className="primary";next.textContent="Наступне завдання";next.addEventListener("click",()=>{current++;render();});box.append(next);
+      }
+      $("finish").append(box);box.querySelector("button").focus();
+    });
+    render();
+  </script>
+<a href="../../?class=5" style="position:fixed;bottom:12px;right:12px;z-index:9999;background:#fff;color:#21453f;padding:11px 16px;border:1px solid #aaa;border-radius:30px;font:600 14px system-ui;text-decoration:none">← До квестів 5 класу</a></body>
+</html>
