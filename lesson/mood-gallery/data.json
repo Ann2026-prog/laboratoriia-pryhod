@@ -1,0 +1,42 @@
+[
+  {
+    "src": "images/thermometers.png",
+    "title": "Термометри настрою",
+    "group": "Термометри"
+  },
+  {
+    "src": "images/autumn-forest.png",
+    "title": "Мій настрій у осінньому лісі",
+    "group": "Осінні"
+  },
+  {
+    "src": "images/autumn-cats.png",
+    "title": "Осінні котики настрою",
+    "group": "Осінні"
+  },
+  {
+    "src": "images/autumn-mood.png",
+    "title": "Обери свій осінній настрій",
+    "group": "Осінні"
+  },
+  {
+    "src": "images/pumpkins.png",
+    "title": "Гарбузовий настрій",
+    "group": "Гарбузики"
+  },
+  {
+    "src": "images/pumpkins-festive.png",
+    "title": "Гарбузики: шість веселих емоцій",
+    "group": "Гарбузики"
+  },
+  {
+    "src": "images/dumplings-wide.png",
+    "title": "Вареники настрою — горизонтальний",
+    "group": "Вареники"
+  },
+  {
+    "src": "images/dumplings-tall.png",
+    "title": "Вареники настрою — вертикальний",
+    "group": "Вареники"
+  }
+]
